@@ -1,0 +1,79 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<InvariantGlobalization>false</InvariantGlobalization>
+		<UserSecretsId>3fdcd082-ce10-44ba-87d6-2edf08338fc0</UserSecretsId>
+		<DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+		<DockerfileContext>.</DockerfileContext>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="FluentValidation" Version="11.8.1" />
+		<PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.8.1" />
+		<PackageReference Include="MediatR" Version="12.2.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.0">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.0">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.5" />
+		<PackageReference Include="OneOf" Version="3.0.263" />
+		<PackageReference Include="OneOf.SourceGenerator" Version="3.0.263" />
+		<PackageReference Include="Roslynator.Analyzers" Version="4.9.0">
+		  <PrivateAssets>all</PrivateAssets>
+		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Roslynator.Formatting.Analyzers" Version="4.9.0">
+		  <PrivateAssets>all</PrivateAssets>
+		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+	</ItemGroup>
+	<ItemGroup>
+		<EmbeddedResource Update="Resources\ApplicationErrors.resx">
+			<Generator>ResXFileCodeGenerator</Generator>
+			<LastGenOutput>ApplicationErrors.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Resources\SystemMessages.resx">
+			<Generator>ResXFileCodeGenerator</Generator>
+			<LastGenOutput>SystemMessages.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+	</ItemGroup>
+	<ItemGroup>
+		<Folder Include="Migrations\" />
+	</ItemGroup>
+	<ItemGroup>
+		<Compile Remove="Migrations\AppDbContextModelSnapshot.cs" />
+		<Compile Remove="Migrations\20231215192955_Initial.cs" />
+		<Compile Remove="Migrations\20231215192955_Initial.Designer.cs" />
+		<Compile Remove="Migrations\20231217181746_Initial.cs" />
+		<Compile Remove="Migrations\20231217181746_Initial.Designer.cs" />
+		<Compile Remove="Migrations\20231217230541_Initial.Designer.cs" />
+	</ItemGroup>
+	<ItemGroup>
+		<Compile Update="Resources\ApplicationErrors.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>ApplicationErrors.resx</DependentUpon>
+		</Compile>
+		<Compile Update="Resources\SystemMessages.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>SystemMessages.resx</DependentUpon>
+		</Compile>
+	</ItemGroup>
+	<ItemGroup>
+	  <EditorConfigFiles Remove="C:\Development\dotnet\Cinebook\.editorconfig" />
+	</ItemGroup>
+	<ItemGroup>
+	  <None Include="C:\Development\dotnet\Cinebook\.editorconfig" />
+	</ItemGroup>
+
+</Project>
